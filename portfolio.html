@@ -112,108 +112,90 @@
           Passionate about frontend development and creative design, turning
           ideas into works.
         </p>
-        <a href="#portfolio" class="btn" data-lang="zh">看看我的作品</a>
-        <a href="#portfolio" class="btn" data-lang="en" style="display: none"
+        <a href="./portfolio.html" class="btn" data-lang="zh">看看我的作品</a>
+        <a
+          href="./portfolio.html"
+          class="btn"
+          data-lang="en"
+          style="display: none"
           >See My Portfolio</a
         >
       </div>
     </section>
 
-    <!-- 關於我 -->
-    <section id="about" class="py-5 bg-white">
-      <div
-        class="container d-flex flex-column flex-md-row align-items-center"
-        style="gap: 3rem"
-      >
-        <!-- 左圖 -->
-        <div class="flex-shrink-0">
-          <img
-            src="./img/profile.jpg"
-            alt="Abby 照片"
-            class="rounded-3 shadow"
-            style="width: 250px; height: auto; object-fit: cover"
-          />
+    <main class="container my-5">
+      <div class="row g-4">
+        <!-- 作品 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="./img/pic3.jpg"
+              class="card-img-top"
+              alt="作品 1 預覽圖"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">作品名稱 1</h5>
+              <p class="card-text">
+                這是一個使用 HTML、CSS 和 JavaScript 完成的 RWD
+                響應式網頁設計作品。
+              </p>
+              <a
+                href="https://example.com/demo1"
+                target="_blank"
+                class="btn btn-primary mt-auto"
+                >查看作品</a
+              >
+            </div>
+          </div>
         </div>
-        <!-- 右文 -->
-        <div>
-          <h2 class="fw-bold mb-3">
-            <span data-lang="zh">嗨！我是 Abby</span>
-            <span data-lang="en" style="display: none">Hi!I'm Abby</span>
-          </h2>
-          <p class="text-muted" style="font-size: 1.1rem; line-height: 1.8">
-            <span data-lang="zh">
-              我是一名前端工程師，熱愛將設計轉換成具功能且優雅的網站，專注於
-              HTML、CSS/SCSS、JavaScript，並用心打造響應式介面。
-              <br /><br />
-              我相信好的設計是隱形的，但優秀的用戶體驗是難忘的。
-            </span>
-            <span data-lang="en" style="display: none">
-              I'm a front-end developer who loves turning design into
-              functional, elegant websites. I focus on HTML, CSS/SCSS,
-              JavaScript, and crafting responsive interfaces with care.
-              <br /><br />
-              I believe good design is invisible, but a great user experience is
-              unforgettable.
-            </span>
-          </p>
-        </div>
-      </div>
-    </section>
 
-    <!--技能列表-->
-    <section id="skills" class="py-5 bg-light">
-      <div class="container">
-        <h2 class="mb-4">
-          <span data-lang="zh">技能概覽</span>
-          <span data-lang="en" style="display: none">Skill Overview</span>
-        </h2>
-        <div class="row justify-content-center g-4">
-          <div class="col-6 col-sm-4 col-md-2 text-center skill-item">
-            <i class="fab fa-html5 fa-4x" style="color: #e34f26"></i>
-            <p class="mt-2 fw-semibold">
-              <span data-lang="zh">HTML5</span>
-              <span data-lang="en" style="display: none">HTML5</span>
-            </p>
+        <!-- 作品 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="./img/project2.jpg"
+              class="card-img-top"
+              alt="作品 2 預覽圖"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">作品名稱 2</h5>
+              <p class="card-text">
+                這是我參與開發的一個互動式表單，搭配 Bootstrap 與 jQuery 完成。
+              </p>
+              <a
+                href="https://example.com/demo2"
+                target="_blank"
+                class="btn btn-primary mt-auto"
+                >查看作品</a
+              >
+            </div>
           </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center skill-item">
-            <i class="fab fa-css3-alt fa-4x" style="color: #1572b6"></i>
-            <p class="mt-2 fw-semibold">
-              <span data-lang="zh">CSS</span>
-              <span data-lang="en" style="display: none">CSS</span>
-            </p>
+        </div>
+
+        <!-- 作品 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="./img/project2.jpg"
+              class="card-img-top"
+              alt="作品 2 預覽圖"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">作品名稱 3</h5>
+              <p class="card-text">
+                這是我參與開發的一個互動式表單，搭配 Bootstrap 與 jQuery 完成。
+              </p>
+              <a
+                href="https://example.com/demo2"
+                target="_blank"
+                class="btn btn-primary mt-auto"
+                >查看作品</a
+              >
+            </div>
           </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center skill-item">
-            <i class="fab fa-js-square fa-4x" style="color: #f0db4f"></i>
-            <p class="mt-2 fw-semibold">
-              <span data-lang="zh">JavaScript</span>
-              <span data-lang="en" style="display: none">JavaScript</span>
-            </p>
-          </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center skill-item">
-            <i class="fab fa-python fa-4x" style="color: #3776ab"></i>
-            <p class="mt-2 fw-semibold">
-              <span data-lang="zh">Python</span>
-              <span data-lang="en" style="display: none">Python</span>
-            </p>
-          </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center skill-item">
-            <i class="fab fa-bootstrap fa-4x" style="color: #7952b3"></i>
-            <p class="mt-2 fw-semibold">
-              <span data-lang="zh">Bootstrap</span>
-              <span data-lang="en" style="display: none">Bootstrap</span>
-            </p>
-          </div>
-          <div class="col-6 col-sm-4 col-md-2 text-center skill-item">
-            <i class="fab fa-php fa-4x" style="color: #777bb3"></i>
-            <p class="mt-2 fw-semibold">
-              <span data-lang="zh">PHP</span>
-              <span data-lang="en" style="display: none">PHP</span>
-            </p>
-          </div>
-          <!-- 可以繼續增加更多技能 -->
         </div>
       </div>
-    </section>
+    </main>
 
     <footer id="contact" class="footer">
       <div class="footer-contact">
