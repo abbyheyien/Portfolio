@@ -1,0 +1,460 @@
+@charset "UTF-8";
+/* Reset & 基本設定 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: #ffffff;
+  color: #212529;
+  line-height: 1.6;
+}
+
+/* :root 全局變數 */
+:root {
+  --primary-color: #be748c; /* 淡粉紅 */
+  --secondary-color: #ad5a5a; /* 輔助色 */
+  --font-family-base: "Noto Sans TC", "思源黑體", "PingFang TC",
+    "Microsoft JhengHei", sans-serif;
+}
+
+/* 動畫效果 */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+/* 預載區塊 */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#preloader div {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #f48fb1;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  animation: spin 1s linear infinite;
+}
+
+/* 導覽列 */
+.navbar {
+  background-color: #f48fb1;
+  padding: 0 2rem;
+}
+
+.navbar .navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.navbar .navbar-brand:hover {
+  color: var(--primary-color);
+}
+
+.navbar .nav-link {
+  color: #fff;
+  margin: 0 1rem;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #b86e7a;
+  font-weight: bold;
+}
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 2rem;
+  color: #333;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Hero 區塊 */
+#home {
+  background-color: #f0f0f0;
+  padding: 5rem 0;
+}
+
+#home h1 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  color: #333;
+}
+
+#home p.lead {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+#home .btn {
+  background-color: #f48fb1;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#home .btn:hover {
+  background-color: var(--primary-color);
+}
+
+/* 打字機文字效果 */
+.typing-text {
+  color: #b86e7a;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.blinking-cursor {
+  font-weight: bold;
+  color: #b86e7a;
+  animation: blink 1s step-start infinite;
+}
+
+/* 關於我區塊 */
+#about {
+  background-color: #fff;
+  color: #333;
+  padding: 0 10rem;
+}
+
+#about h2 {
+  text-align: left;
+  color: #b86e7a;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+#about img {
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+}
+
+#about .container {
+  gap: 1.5rem;
+}
+
+/* 隱藏滾動條 */
+.timeline-horizontal::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline-horizontal {
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.timeline-card {
+  position: relative;
+  flex: 0 0 280px;
+  background-color: #fff0f5;
+  border-radius: 15px;
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 4px 12px rgba(190, 116, 140, 0.3);
+  border-left: 6px solid var(--primary-color);
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(190, 116, 140, 0.5);
+}
+
+.timeline-date {
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.timeline-card h4 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.timeline-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.timeline-card:not(:last-child)::after {
+  content: "→"; /* 箭頭符號 */
+  position: absolute;
+  right: -20px; /* 距離卡片右邊20px，調整箭頭位置 */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  pointer-events: none;
+}
+
+/* 技能區塊 */
+#skills {
+  background-color: #ffffff;
+  padding: 60px 10rem;
+}
+#skills .skill-item img {
+  width: 64px;
+  height: auto;
+  margin-bottom: 10px;
+}
+#skills .skill-item p {
+  font-weight: 600;
+  margin: 0;
+}
+
+#skills h2 {
+  text-align: left;
+  color: #b86e7a;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+}
+
+.skill-item p {
+  color: #444;
+  font-size: 1rem;
+}
+
+.skill-item {
+  flex: 1 1 100%; /* 小螢幕單排 */
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.skill-item i:hover {
+  transform: scale(1.2);
+}
+
+#skills .container {
+  justify-content: center; /* 或其他排列 */
+  gap: 1rem; /* 間距 */
+}
+
+#skills .skill-images {
+  margin-top: 1.5rem;
+}
+
+/* 聯絡區塊 */
+.footer {
+  background-color: #f48fb1;
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.footer-contact h5 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.footer-contact p {
+  margin: 0.25rem 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.footer-social a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+  color: #ffdde1;
+}
+
+.footer-copy p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* 回到頂端按鈕 */
+#backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  background-color: #f48fb1;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #ec407a;
+}
+
+/* 響應式調整 */
+@media (max-width: 767px) {
+  #home {
+    padding: 3rem 0;
+  }
+  #home h1 {
+    font-size: 2rem;
+  }
+  #home p.lead {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  #home .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+  #about {
+    padding: 0 1rem;
+  }
+  #about .row {
+    flex-direction: column;
+  }
+  #about .container {
+    gap: 3rem;
+  }
+  #about .flip-card {
+    max-width: 200px !important;
+    height: 200px !important;
+    margin: 0 auto 1rem;
+  }
+  #about .flip-card-front img {
+    width: 200px !important;
+    height: 200px !important;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .typing-text {
+    font-size: 1.2rem;
+  }
+  h1.display-3 {
+    font-size: 2rem;
+  }
+  #skills {
+    padding: 40px 1.5rem; /* 或 1rem 視覺較佳 */
+  }
+  #skills h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .skill-item {
+    text-align: center;
+  }
+  .skill-item img {
+    margin: 0 auto 0.5rem;
+  }
+}
+/* 平板 */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #about .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem; /* 間距 */
+  }
+  #about .col-md-6:first-child {
+    max-width: 45%;
+    flex: 0 0 45%;
+    display: flex;
+    justify-content: center;
+  }
+  #about .col-md-6:last-child {
+    max-width: 55%;
+    flex: 0 0 55%;
+    padding-left: 1rem;
+  }
+  #about img {
+    width: 180px;
+    height: auto;
+  }
+  #about h2 {
+    font-size: 1.75rem;
+  }
+  #about p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+@media (max-width: 1024px) {
+  .timeline-card p,
+  .timeline-card h4 {
+    font-size: 0.9rem;
+  }
+  .timeline-card {
+    padding: 1rem;
+  }
+}
