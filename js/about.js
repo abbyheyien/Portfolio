@@ -45,3 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// 回頂端按鈕
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTopBtn = document.getElementById("backToTop");
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
