@@ -12,23 +12,15 @@ window.addEventListener("load", () => {
 });
 
 // 中英切換
-const langToggleBtn = document.getElementById("langToggle");
-let currentLang = "zh"; // 預設中文
-
-langToggleBtn.addEventListener("click", () => {
-  const zhElems = document.querySelectorAll('[data-lang="zh"]');
-  const enElems = document.querySelectorAll('[data-lang="en"]');
-  if (currentLang === "zh") {
-    zhElems.forEach((el) => (el.style.display = "none"));
-    enElems.forEach((el) => (el.style.display = ""));
-    langToggleBtn.textContent = "中";
-    currentLang = "en";
-  } else {
-    zhElems.forEach((el) => (el.style.display = ""));
-    enElems.forEach((el) => (el.style.display = "none"));
-    langToggleBtn.textContent = "EN";
-    currentLang = "zh";
-  }
+document.querySelectorAll(".lang-option").forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    const selectedLang = this.getAttribute("data-lang");
+    document.querySelectorAll("[data-lang]").forEach((el) => {
+      el.style.display =
+        el.getAttribute("data-lang") === selectedLang ? "" : "none";
+    });
+  });
 });
 
 // 回頂端按鈕
@@ -37,16 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
   backToTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-});
-
-// 導覽列滾動效果
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
 });
 
 // 打字機效果

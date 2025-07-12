@@ -6,6 +6,14 @@
   box-sizing: border-box;
 }
 
+/* :root 全域變數 */
+:root {
+  --primary-color: #be748c; /* 淡粉紅 */
+  --secondary-color: #ad5a5a; /* 輔助色 */
+  --font-family-base: "Noto Sans TC", "思源黑體", "PingFang TC",
+    "Microsoft JhengHei", sans-serif;
+}
+
 html,
 body {
   max-width: 100%;
@@ -17,14 +25,6 @@ body {
   background-color: #ffffff;
   color: #212529;
   line-height: 1.6;
-}
-
-/* :root 全局變數 */
-:root {
-  --primary-color: #be748c; /* 淡粉紅 */
-  --secondary-color: #ad5a5a; /* 輔助色 */
-  --font-family-base: "Noto Sans TC", "思源黑體", "PingFang TC",
-    "Microsoft JhengHei", sans-serif;
 }
 
 /* 動畫效果 */
@@ -79,6 +79,7 @@ body {
   padding: 0 2rem;
 }
 
+/* 品牌名稱 */
 .navbar .navbar-brand {
   font-weight: bold;
   font-size: 1.5rem;
@@ -90,15 +91,62 @@ body {
   color: var(--primary-color);
 }
 
-.navbar .nav-link {
-  color: #fff;
-  margin: 0 1rem;
-  transition: color 0.3s ease, font-weight 0.3s ease;
+/* 導覽連結共用樣式 */
+.navbar .nav-link,
+.navbar-nav .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-family: var(--font-family-base);
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  transition: color 0.3s ease, font-weight 0.3s ease, background-color 0.3s ease;
+  background-color: transparent;
+  border-radius: 0;
+  text-decoration: none !important;
 }
 
-.navbar .nav-link:hover {
-  color: #b86e7a;
+/* hover 效果 */
+.navbar .nav-link:hover,
+.navbar-nav .dropdown-toggle:hover {
+  color: #ad5a5a;
   font-weight: bold;
+}
+
+/* 語言地球 icon */
+.navbar-nav .dropdown-toggle .bi-globe {
+  margin-right: 0.4rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+/* 關閉焦點框線 */
+.navbar-nav .dropdown-toggle:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* 下拉選單 */
+.navbar .dropdown-menu {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  min-width: unset !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  padding: 0.25rem 0.75rem;
+  left: 0 !important;
+  transform: translateY(5px) !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  color: #ad5a5a;
+}
+
+/* 下拉選單 hover */
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #ffffff;
+  color: #ad5a5a;
 }
 
 /*表單*/
@@ -245,5 +293,32 @@ body {
   .contact-form {
     margin: 2rem 1rem;
     padding: 2rem 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-collapse {
+    padding: 0.5rem 1rem;
+  }
+  .navbar-nav .nav-item {
+    margin: 0.3rem 0; /* 控制上下間距，原本可能太大 */
+  }
+  .navbar-nav .nav-link {
+    padding: 0.4rem 0.8rem; /* 縮小 padding */
+    font-size: 1rem;
+  }
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem; /* 控制漢堡按鈕大小 */
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar .dropdown {
+    position: relative !important;
+  }
+  .navbar .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    transform: translateY(5px) !important;
+    z-index: 9999 !important;
   }
 }

@@ -6,6 +6,14 @@
   box-sizing: border-box;
 }
 
+/* :root 全局變數 */
+:root {
+  --primary-color: #be748c; /* 淡粉紅 */
+  --secondary-color: #ad5a5a; /* 輔助色 */
+  --font-family-base: "Noto Sans TC", "思源黑體", "PingFang TC",
+    "Microsoft JhengHei", sans-serif;
+}
+
 html,
 body {
   max-width: 100%;
@@ -17,14 +25,6 @@ body {
   background-color: #ffffff;
   color: #212529;
   line-height: 1.6;
-}
-
-/* :root 全局變數 */
-:root {
-  --primary-color: #be748c; /* 淡粉紅 */
-  --secondary-color: #ad5a5a; /* 輔助色 */
-  --font-family-base: "Noto Sans TC", "思源黑體", "PingFang TC",
-    "Microsoft JhengHei", sans-serif;
 }
 
 .btn.btn-primary {
@@ -93,6 +93,7 @@ body {
   padding: 0 2rem;
 }
 
+/* 品牌名稱 */
 .navbar .navbar-brand {
   font-weight: bold;
   font-size: 1.5rem;
@@ -104,22 +105,77 @@ body {
   color: var(--primary-color);
 }
 
-.navbar .nav-link {
-  color: #fff;
-  margin: 0 1rem;
-  transition: color 0.3s ease, font-weight 0.3s ease;
+/* 導覽連結共用樣式 */
+.navbar .nav-link,
+.navbar-nav .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-family: var(--font-family-base);
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  transition: color 0.3s ease, font-weight 0.3s ease, background-color 0.3s ease;
+  background-color: transparent;
+  border-radius: 0;
+  text-decoration: none !important;
 }
 
-.navbar .nav-link:hover {
-  color: #b86e7a;
+/* hover 效果 */
+.navbar .nav-link:hover,
+.navbar-nav .dropdown-toggle:hover {
+  color: #ad5a5a;
   font-weight: bold;
 }
 
-.blinking-cursor {
-  font-weight: 100;
-  font-size: 2rem;
-  color: #333;
-  animation: blink 1s infinite;
+/* 語言地球 icon */
+.navbar-nav .dropdown-toggle .bi-globe {
+  margin-right: 0.4rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+/* 關閉焦點框線 */
+.navbar-nav .dropdown-toggle:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* 下拉選單 */
+.navbar .dropdown-menu {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  min-width: unset !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  padding: 0.25rem 0.75rem;
+  left: 0 !important;
+  transform: translateY(5px) !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  color: #ad5a5a;
+}
+
+/* 下拉選單 hover */
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #ffffff;
+  color: #ad5a5a;
+}
+
+/* 輪播圖容器自適應 */
+#carouselExample {
+  width: 100%; /* 輪播圖寬度適應父容器 */
+  height: 400px; /* 設定固定高度，你可以根據需要調整 */
+  overflow: hidden; /* 確保圖片不會超出容器 */
+}
+
+/* 確保圖片填滿容器並保持比例 */
+#carouselExample img {
+  width: 100%; /* 圖片寬度為100% */
+  height: 100%; /* 圖片高度為100% */
+  -o-object-fit: cover;
+     object-fit: cover; /* 確保圖片保持比例並填滿容器 */
 }
 
 @keyframes blink {
@@ -133,53 +189,6 @@ body {
     opacity: 1;
   }
 }
-/* Hero 區塊 */
-#home {
-  background-color: #f0f0f0;
-  padding: 5rem 0;
-}
-
-#home h1 {
-  font-weight: 700;
-  margin-bottom: 1rem;
-  font-size: 3rem;
-  color: #333;
-}
-
-#home p.lead {
-  font-size: 1.25rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-#home .btn {
-  background-color: #f48fb1;
-  color: #fff;
-  padding: 0.75rem 2rem;
-  font-size: 1.2rem;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#home .btn:hover {
-  background-color: var(--primary-color);
-}
-
-/* 打字機文字效果 */
-.typing-text {
-  color: #b86e7a;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-.blinking-cursor {
-  font-weight: bold;
-  color: #b86e7a;
-  animation: blink 1s step-start infinite;
-}
-
 /* 聯絡區塊 */
 .footer {
   background-color: #f48fb1;
@@ -248,99 +257,63 @@ body {
   background-color: #ec407a;
 }
 
-/* 響應式調整 */
-@media (max-width: 767px) {
-  #home {
-    padding: 3rem 0;
+/* 針對手機的調整 (max-width: 768px) */
+@media (max-width: 768px) {
+  /* 調整 Navbar */
+  .navbar-collapse {
+    padding: 0.5rem 1rem;
   }
-  #home h1 {
-    font-size: 2rem;
+  .navbar-nav .nav-item {
+    margin: 0.3rem 0; /* 控制上下間距，避免太大 */
   }
-  #home p.lead {
-    font-size: 1rem;
-    padding: 0 1rem;
+  .navbar-nav .nav-link {
+    padding: 0.4rem 0.8rem; /* 縮小 padding */
+    font-size: 1rem; /* 縮小字體大小 */
   }
-  #home .btn {
-    font-size: 1rem;
-    padding: 0.5rem 1.5rem;
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem; /* 控制漢堡按鈕大小 */
   }
-  #about {
-    padding: 0 1rem;
+  /* 調整卡片顯示 */
+  .col-6 {
+    flex: 0 0 50%; /* 每個卡片佔 50% 寬度，兩個卡片並排 */
+    max-width: 50%;
   }
-  #about .row {
-    flex-direction: column;
+  .card-img-top {
+    width: 100%; /* 確保圖片在小螢幕上適應卡片寬度 */
+    height: auto; /* 保持圖片比例 */
   }
-  #about .container {
-    gap: 3rem;
+  .card-body {
+    padding: 1rem; /* 增加卡片內部間距 */
   }
-  #about .flip-card {
-    max-width: 200px !important;
-    height: 200px !important;
-    margin: 0 auto 1rem;
+  .btn.btn-primary {
+    font-size: 1rem; /* 減小按鈕大小以適應手機 */
   }
-  #about .flip-card-front img {
-    width: 200px !important;
-    height: 200px !important;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .typing-text {
-    font-size: 1.2rem;
-  }
-  h1.display-3 {
-    font-size: 2rem;
-  }
-  #skills {
-    padding: 40px 1.5rem; /* 或 1rem 視覺較佳 */
-  }
-  #skills h2 {
-    font-size: 2rem;
-    text-align: center;
-  }
-  .skill-item {
-    text-align: center;
-  }
-  .skill-item img {
-    margin: 0 auto 0.5rem;
+  #carouselExample {
+    height: 100px; /* 在手機上減小輪播圖高度 */
   }
 }
-/* 平板 */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  #about .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1.5rem; /* 間距 */
+/* 針對平板的調整 (min-width: 768px 至 max-width: 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* 平板顯示卡片 */
+  .card-img-top {
+    height: auto; /* 確保圖片比例不會變形 */
   }
-  #about .col-md-6:first-child {
-    max-width: 45%;
-    flex: 0 0 45%;
-    display: flex;
-    justify-content: center;
+  .btn.btn-primary {
+    font-size: 1rem; /* 保持平板上按鈕的大小 */
   }
-  #about .col-md-6:last-child {
-    max-width: 55%;
-    flex: 0 0 55%;
-    padding-left: 1rem;
-  }
-  #about img {
-    width: 180px;
-    height: auto;
-  }
-  #about h2 {
-    font-size: 1.75rem;
-  }
-  #about p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+  #carouselExample {
+    height: 400px; /* 在平板上調整高度 */
   }
 }
-@media (max-width: 1024px) {
-  .timeline-card p,
-  .timeline-card h4 {
-    font-size: 0.9rem;
+@media (max-width: 991.98px) {
+  .navbar .dropdown {
+    position: relative !important;
   }
-  .timeline-card {
-    padding: 1rem;
+  .navbar .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    transform: translateY(5px) !important;
+    z-index: 9999 !important;
   }
 }

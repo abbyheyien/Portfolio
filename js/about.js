@@ -1,7 +1,7 @@
-//開啟動畫
+// 預載動畫
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
-  if (!preloader) return; // 預防找不到元素出錯
+  if (!preloader) return;
 
   preloader.style.opacity = "0";
   preloader.style.transition = "opacity 0.5s ease";
@@ -9,6 +9,18 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     preloader.style.display = "none";
   }, 500);
+});
+
+// 中英切換
+document.querySelectorAll(".lang-option").forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    const selectedLang = this.getAttribute("data-lang");
+    document.querySelectorAll("[data-lang]").forEach((el) => {
+      el.style.display =
+        el.getAttribute("data-lang") === selectedLang ? "" : "none";
+    });
+  });
 });
 
 // Scroll reveal 簡易實作
