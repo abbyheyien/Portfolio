@@ -200,6 +200,19 @@ body {
   transform: scale(0.95);
 }
 
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link:active,
+.navbar-nav .dropdown-toggle:hover,
+.navbar-nav .dropdown-toggle:focus,
+.navbar-nav .dropdown-toggle:active {
+  color: var(--secondary-color);
+  font-weight: bold;
+  background-color: transparent;
+  text-shadow: -1px -1px 0 #f2f2f2, 1px -1px 0 #f2f2f2, -1px 1px 0 #f2f2f2,
+    1px 1px 0 #f2f2f2;
+}
+
 .typing-text {
   color: var(--primary-color);
   font-weight: bold;
