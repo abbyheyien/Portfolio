@@ -23,29 +23,29 @@ document.querySelectorAll(".lang-option").forEach((btn) => {
   });
 });
 
-// 回頂端按鈕
-document.addEventListener("DOMContentLoaded", () => {
-  const backToTopBtn = document.getElementById("backToTop");
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-});
-
-// 打字機效果
+// 打字機效果（支援多句切換）
 document.addEventListener("DOMContentLoaded", function () {
-  const text = "Hello! Welcome to my website💗";
+  const texts = [
+    "Hello! Welcome to my website 💗",
+    "我是 Abby",
+    "前端開發者 & 設計師",
+  ];
   const target = document.getElementById("typewriter");
-  let index = 0;
+  let textIndex = 0;
+  let charIndex = 0;
 
   function type() {
-    if (index < text.length) {
-      target.textContent += text.charAt(index);
-      index++;
+    if (!target) return;
+
+    if (charIndex < texts[textIndex].length) {
+      target.textContent += texts[textIndex].charAt(charIndex);
+      charIndex++;
       setTimeout(type, 100);
     } else {
       setTimeout(() => {
         target.textContent = "";
-        index = 0;
+        charIndex = 0;
+        textIndex = (textIndex + 1) % texts.length;
         type();
       }, 2000);
     }
@@ -53,3 +53,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   type();
 });
+
+//頂端按鈕
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTopBtn = document.getElementById("backToTop");
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+window.addEventListener("scroll", () => {
+  const backToTopBtn = document.getElementById("backToTop");
+  if (!backToTopBtn) return;
+  backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+
+// 滾動出現動畫
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));

@@ -69,3 +69,17 @@ form.addEventListener("submit", function (event) {
       }
     );
 });
+
+//頂端按鈕
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTopBtn = document.getElementById("backToTop");
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+window.addEventListener("scroll", () => {
+  const backToTopBtn = document.getElementById("backToTop");
+  if (!backToTopBtn) return;
+  backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});

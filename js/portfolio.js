@@ -31,14 +31,6 @@ langToggleBtn.addEventListener("click", () => {
   }
 });
 
-// 回頂端按鈕
-document.addEventListener("DOMContentLoaded", () => {
-  const backToTopBtn = document.getElementById("backToTop");
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-});
-
 // 導覽列滾動效果
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
@@ -47,4 +39,18 @@ window.addEventListener("scroll", () => {
   } else {
     navbar.classList.remove("scrolled");
   }
+});
+
+//頂端按鈕
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTopBtn = document.getElementById("backToTop");
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+window.addEventListener("scroll", () => {
+  const backToTopBtn = document.getElementById("backToTop");
+  if (!backToTopBtn) return;
+  backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
 });
