@@ -1,16 +1,3 @@
-// 預載動畫
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  if (!preloader) return;
-
-  preloader.style.opacity = "0";
-  preloader.style.transition = "opacity 0.5s ease";
-
-  setTimeout(() => {
-    preloader.style.display = "none";
-  }, 500);
-});
-
 // 中英切換
 document.querySelectorAll(".lang-option").forEach((btn) => {
   btn.addEventListener("click", function (e) {
@@ -25,11 +12,7 @@ document.querySelectorAll(".lang-option").forEach((btn) => {
 
 // 打字機效果（支援多句切換）
 document.addEventListener("DOMContentLoaded", function () {
-  const texts = [
-    "Hello! Welcome to my website 💗",
-    "我是 Abby",
-    "前端開發者 & 設計師",
-  ];
+  const texts = ["Hello!", "I'am Abby💗"];
   const target = document.getElementById("typewriter");
   let textIndex = 0;
   let charIndex = 0;

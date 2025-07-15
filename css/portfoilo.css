@@ -81,6 +81,8 @@ body {
 .navbar {
   background-color: var(--primary-color);
   padding: 0 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .navbar .navbar-brand {
@@ -105,7 +107,7 @@ body {
   color: #f2f2f2;
   font-family: var(--font-family-base);
   padding: 1rem 6rem;
-  transition: color 0.3s ease, font-weight 0.3s ease, background-color 0.3s ease;
+  transition: font-weight 0.3s ease;
   background-color: transparent;
   border-radius: 0;
   text-decoration: none !important;
@@ -115,7 +117,6 @@ body {
 .navbar-nav .dropdown-toggle:hover {
   color: var(--secondary-color);
   font-weight: bold;
-  text-shadow: -1px -1px 0 #f2f2f2, 1px -1px 0 #f2f2f2, -1px 1px 0 #f2f2f2, 1px 1px 0 #f2f2f2;
 }
 
 .navbar-nav .dropdown-toggle .bi-globe {
@@ -147,6 +148,36 @@ body {
   background-color: rgba(168, 45, 7, 0.08); /* 淺紅透明 */
   color: var(--secondary-color);
   transform: translateX(3px);
+}
+
+.navbar .nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-text {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.nav-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6px;
+  background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='6' xmlns='http://www.w3.org/2000/svg'><path d='M0 3 Q 5 0, 10 3 T 20 3 T 30 3 T 40 3 T 50 3 T 60 3 T 70 3 T 80 3 T 90 3 T 100 3' stroke='%23a82d07' fill='transparent' stroke-width='1.5' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .nav-text::after {
+  transform: scaleX(1);
 }
 
 /* 輪播圖容器自適應 */

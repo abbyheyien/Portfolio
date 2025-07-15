@@ -105,7 +105,7 @@ body {
   color: #f2f2f2;
   font-family: var(--font-family-base);
   padding: 1rem 6rem;
-  transition: color 0.3s ease, font-weight 0.3s ease, background-color 0.3s ease;
+  transition: font-weight 0.3s ease;
   background-color: transparent;
   border-radius: 0;
   text-decoration: none !important;
@@ -147,6 +147,18 @@ body {
   background-color: rgba(168, 45, 7, 0.08); /* 淺紅透明 */
   color: var(--secondary-color);
   transform: translateX(3px);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link:active,
+.navbar-nav .dropdown-toggle:hover,
+.navbar-nav .dropdown-toggle:focus,
+.navbar-nav .dropdown-toggle:active {
+  color: var(--secondary-color);
+  font-weight: bold;
+  background-color: transparent;
+  text-shadow: -1px -1px 0 #f2f2f2, 1px -1px 0 #f2f2f2, -1px 1px 0 #f2f2f2, 1px 1px 0 #f2f2f2;
 }
 
 #experience {
