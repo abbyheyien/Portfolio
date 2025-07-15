@@ -178,7 +178,7 @@ body {
 
 /* Hero 區塊 */
 .hero-section {
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
   position: relative;
 }
 
@@ -264,7 +264,6 @@ body {
 
 /* 關於我區塊 */
 #about {
-  background-color: #f2f2f2;
   color: #555;
   padding: 0 20rem;
 }
