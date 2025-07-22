@@ -12,7 +12,7 @@ document.querySelectorAll(".lang-option").forEach((btn) => {
 
 // 打字機效果（支援多句切換）
 document.addEventListener("DOMContentLoaded", function () {
-  const texts = ["Hello!", "I'am Abby💗"];
+  const texts = ["Welcome to my website!"];
   const target = document.getElementById("typewriter");
   let textIndex = 0;
   let charIndex = 0;

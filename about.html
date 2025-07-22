@@ -5,41 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="icon" href="./img/favicon.png?v=2" type="image/png" />
-    <!-- 自訂樣式 -->
-    <link rel="stylesheet" href="./css/about.css" />
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Bootstrap Icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <!-- 自訂樣式 -->
+    <link rel="stylesheet" href="./css/about.css" />
+
     <title>Abby's Portfolio</title>
   </head>
   <body>
-    <!-- Preloader -->
-    <div
-      id="preloader"
-      class="fixed inset-0 flex items-center justify-center bg-white z-50"
-    >
-      <div
-        class="animate-spin rounded-full h-16 w-16 border-t-4 border-pink-300 border-solid"
-      ></div>
-    </div>
-
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
       <div class="container">
-        <!-- Logo -->
         <a class="navbar-brand" href="./index.html">MyPortfolio</a>
-
-        <!-- 漢堡按鈕 -->
         <button
           class="navbar-toggler"
           type="button"
@@ -51,59 +49,45 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- 導覽選單 -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto align-items-lg-center" id="navLinks">
             <li class="nav-item">
-              <a class="nav-link" href="./index.html" data-key="home">首頁</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./about.html" data-key="about"
-                >關於我</a
+              <a class="nav-link" href="./index.html"
+                ><span class="nav-text">首頁</span></a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./portfolio.html" data-key="portfolio"
-                >作品集</a
+              <a class="nav-link" href="./about.html"
+                ><span class="nav-text">關於我</span></a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./contact.html" data-key="contact"
-                >聯絡我</a
+              <a class="nav-link" href="./portfolio.html"
+                ><span class="nav-text">作品集</span></a
               >
             </li>
-
-            <!-- 語言切換 -->
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html"
+                ><span class="nav-text">聯絡我</span></a
+              >
+            </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
-                role="button"
                 id="langDropdown"
+                role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <i class="bi bi-globe"></i> 語言
+                <span class="nav-text"> <i class="bi bi-globe"></i> 語言 </span>
               </a>
-              <ul class="dropdown-menu dropdown-menu-end">
+              <ul class="dropdown-menu" aria-labelledby="langDropdown">
                 <li>
-                  <a
-                    class="dropdown-item lang-btn"
-                    href="./about.html"
-                    data-lang="zh"
-                  >
-                    繁體中文
-                  </a>
+                  <a class="dropdown-item" href="./about.html">繁體中文</a>
                 </li>
                 <li>
-                  <a
-                    class="dropdown-item lang-btn"
-                    href="./about-en.html"
-                    data-lang="en"
-                  >
-                    English
-                  </a>
+                  <a class="dropdown-item" href="./about-en.html">English</a>
                 </li>
               </ul>
             </li>
@@ -120,61 +104,157 @@
         <p>
           我熱愛將設計與程式結合，打造使用者體驗優異且美觀的網站，喜歡探索新技術與最佳化網站效能，熟悉
           HTML、CSS、JavaScript。
-          <br /><br />
+        </p>
+        <p>
           閒暇時，我喜歡閱讀技術文章、嘗試設計新風格，並與社群分享心得。期待持續成長，創造更多有趣的專案！
         </p>
       </div>
     </div>
 
-    <!-- 經歷、教育背景 -->
-    <section id="experience" class="pt-0 pb-5">
-      <div class="container">
-        <div class="timeline-horizontal">
-          <div class="timeline-card">
-            <div class="timeline-date">2023 - 2024</div>
-            <h4>
-              <span>碩陽數位科技</span><br />
-              <span>賽事專員</span>
-            </h4>
-            <p>策劃VEX機器人賽事，負責比賽裁判教育訓練。</p>
+    <section id="skills" class="bg-light">
+      <div class="custom-container">
+        <div class="container">
+          <h2 class="fw-bold mb-5">技能概覽</h2>
+          <div
+            class="row row-cols-2 row-cols-sm-3 row-cols-md-6 gx-4 gy-4 justify-content-center"
+          >
+            <div class="col">
+              <div
+                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
+              >
+                <i class="fab fa-html5 fa-3x mb-3" style="color: #e34f26"></i>
+                <p class="fw-semibold mb-0">HTML5</p>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
+              >
+                <i
+                  class="fab fa-css3-alt fa-3x mb-3"
+                  style="color: #1572b6"
+                ></i>
+                <p class="fw-semibold mb-0">CSS</p>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
+              >
+                <i
+                  class="fab fa-js-square fa-3x mb-3"
+                  style="color: #f0db4f"
+                ></i>
+                <p class="fw-semibold mb-0">JavaScript</p>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
+              >
+                <i class="fab fa-python fa-3x mb-3" style="color: #3776ab"></i>
+                <p class="fw-semibold mb-0">Python</p>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
+              >
+                <i
+                  class="fab fa-bootstrap fa-3x mb-3"
+                  style="color: #7952b3"
+                ></i>
+                <p class="fw-semibold mb-0">Bootstrap</p>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
+              >
+                <i class="fab fa-php fa-3x mb-3" style="color: #777bb3"></i>
+                <p class="fw-semibold mb-0">PHP</p>
+              </div>
+            </div>
           </div>
-          <div class="timeline-card">
-            <div class="timeline-date">2022 - 2023</div>
-            <h4>
-              <span>橘子蘋果程式學苑</span><br />
-              <span>學習教練</span>
-            </h4>
-            <p>依年齡因材施教，培養學童邏輯思考、問題解決的能力。</p>
-          </div>
-          <div class="timeline-card">
-            <div class="timeline-date">2021 - 2023</div>
-            <h4>
-              <span>碩睿資訊有限公司</span><br />
-              <span>實習生</span>
-            </h4>
-            <p>圖書館系統koha的管理、負責koha翻譯與審核。</p>
-          </div>
-          <div class="timeline-card">
-            <div class="timeline-date">2019 - 2023</div>
-            <h4>淡江大學 <br />資訊與圖書館學系</h4>
-            <p>主修資訊科技與圖書資訊管理，結合設計與使用者體驗。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="py-5">
+      <div class="custom-container">
+        <div class="container">
+          <h2 class="fw-bold mb-5">工作經歷</h2>
+          <div class="timeline">
+            <!--經歷1 -->
+            <div class="timeline-item d-flex mb-5">
+              <div class="timeline-dot mt-1 me-3"></div>
+              <div>
+                <p class="mb-1 text-muted fw-bold">2022 - 現在</p>
+                <h5 class="fw-semibold mb-1">
+                  學習教練｜<span class="fw-bold">橘子蘋果程式學苑</span>
+                </h5>
+                <p class="text-muted small mb-0">
+                  依年齡因材施教，培養學童邏輯思考、問題解決的能力。
+                </p>
+              </div>
+            </div>
+            <!--經歷2 -->
+            <div class="timeline-item d-flex mb-5">
+              <div class="timeline-dot mt-1 me-3"></div>
+              <div>
+                <p class="mb-1 text-muted fw-bold">2023-2024</p>
+                <h5 class="fw-semibold mb-1">
+                  賽事專員｜<span class="fw-bold">碩陽數位科技</span>
+                </h5>
+                <p class="text-muted small mb-0">
+                  策劃VEX機器人賽事，負責比賽裁判教育訓練。
+                </p>
+              </div>
+            </div>
+            <!--經歷3 -->
+            <div class="timeline-item d-flex mb-5">
+              <div class="timeline-dot mt-1 me-3"></div>
+              <div>
+                <p class="mb-1 text-muted fw-bold">2021 - 2023</p>
+                <h5 class="fw-semibold mb-1">
+                  實習生｜<span class="fw-bold">碩睿資訊有限公司</span>
+                </h5>
+                <p class="text-muted small mb-0">
+                  圖書館系統koha的管理、負責koha翻譯與審核。
+                </p>
+              </div>
+            </div>
+            <!--經歷4 -->
+            <div class="timeline-item d-flex mb-5">
+              <div class="timeline-dot mt-1 me-3"></div>
+              <div>
+                <p class="mb-1 text-muted fw-bold">2019 – 2023</p>
+                <h5 class="fw-semibold mb-1">
+                  淡江大學｜<span class="fw-bold">資訊與圖書館學系</span>
+                </h5>
+                <p class="text-muted small mb-0">
+                  主修資訊科技與圖書資訊管理，結合設計與使用者體驗。
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- footer -->
-    <footer id="contact" class="footer">
-      <div class="footer-contact">
-        <p>phone：+886 912 345 678</p>
-        <p>address：臺北市北投區</p>
-        <p>email：email@example.com</p>
+    <footer id="contact" class="footer py-4 text-center">
+      <div class="footer-contact mb-3">
+        <p>電話： +886 912 345 678</p>
+        <p>地址：臺北市北投區</p>
+        <p>電子郵件： email@example.com</p>
       </div>
-      <div class="footer-social">
+      <div class="footer-social mb-3">
         <a
           href="https://facebook.com/yourprofile"
           target="_blank"
           aria-label="Facebook"
+          class="mx-2"
         >
           <i class="bi bi-facebook"></i>
         </a>
@@ -182,6 +262,7 @@
           href="https://linkedin.com/in/yourprofile"
           target="_blank"
           aria-label="LinkedIn"
+          class="mx-2"
         >
           <i class="bi bi-linkedin"></i>
         </a>
@@ -189,10 +270,11 @@
           href="https://github.com/yourprofile"
           target="_blank"
           aria-label="GitHub"
+          class="mx-2"
         >
           <i class="bi bi-github"></i>
         </a>
-        <a href="mailto:your.email@example.com" aria-label="Email">
+        <a href="mailto:your.email@example.com" aria-label="Email" class="mx-2">
           <i class="bi bi-envelope-fill"></i>
         </a>
       </div>
@@ -201,7 +283,9 @@
       </div>
     </footer>
 
-    <button id="backToTop" title="回到頂端">↑</button>
+    <button id="backToTop" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

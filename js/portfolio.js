@@ -1,16 +1,3 @@
-// 預載動畫
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  if (!preloader) return;
-
-  preloader.style.opacity = "0";
-  preloader.style.transition = "opacity 0.5s ease";
-
-  setTimeout(() => {
-    preloader.style.display = "none";
-  }, 500);
-});
-
 // 中英切換
 const langToggleBtn = document.getElementById("langToggle");
 let currentLang = "zh"; // 預設中文
