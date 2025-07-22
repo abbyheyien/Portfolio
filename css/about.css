@@ -57,14 +57,6 @@ body {
   background-color: #bdbdbd;
 }
 
-.section-title {
-  color: var(--primary-color);
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: left;
-  margin-bottom: 4rem;
-}
-
 /* 導覽列 */
 .navbar {
   background-color: #fff;
@@ -139,16 +131,12 @@ body {
 
 /* 下拉式選單 */
 .navbar .dropdown-menu {
-  color: var(--primary-color);
-  font-family: var(--font-family-base);
-  font-size: 1rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0.5rem 1.25rem;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(5px); /* 往下偏移一點 */
+  min-width: 140px;
   text-align: center;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  transform: translateX(-15px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-item {
@@ -409,9 +397,14 @@ body {
 
 /* 📱 手機版調整 custom-wrapper 排版與間距 */
 @media (max-width: 576px) {
+  .navbar .dropdown-menu {
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important;
+  }
   .custom-wrapper {
     flex-direction: column;
-    justify-content: center; /* 重點：讓上下置中 */
+    justify-content: center;
     align-items: center;
     padding: 2rem 1rem;
     text-align: center;
@@ -430,6 +423,6 @@ body {
     margin-top: 1rem;
   }
   .photo {
-    margin: 0 auto 1.5rem; /* 圖片置中 + 下方留白 */
+    margin: 0 auto 1.5rem;
   }
 }
