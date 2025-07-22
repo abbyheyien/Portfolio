@@ -1,20 +1,3 @@
-//開啟動畫
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  if (!preloader) return; // 預防找不到元素出錯
-
-  preloader.style.opacity = "0";
-  preloader.style.transition = "opacity 0.5s ease";
-
-  setTimeout(() => {
-    preloader.style.display = "none";
-  }, 500);
-});
-
-(function () {
-  emailjs.init("YOUR_USER_ID"); // 換成你的 EmailJS 用戶ID
-})();
-
 const form = document.getElementById("contact-form");
 const errorMsg = document.getElementById("error-msg");
 const successMsg = document.getElementById("success-msg");
