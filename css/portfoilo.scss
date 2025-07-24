@@ -59,7 +59,6 @@ body {
 /* 導覽列 */
 .navbar {
   background-color: #fff;
-  padding: 0 2rem;
 }
 
 /* LOGO */
@@ -296,4 +295,56 @@ body {
 
 #backToTop:hover {
   background-color: var(--secondary-color);
+}
+
+/* --------------------------------------------------
+   響應式調整：寬度 < 992px (平板與手機)
+-------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+    align-items: center;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+
+  .navbar-nav .nav-link {
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------
+   響應式調整：寬度 < 768px (平板)
+-------------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0.3rem 0;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* --------------------------------------------------
+   響應式調整：寬度 < 576px (手機)
+-------------------------------------------------- */
+@media (max-width: 576px) {
+  .navbar .dropdown-menu {
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important;
+  }
 }

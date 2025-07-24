@@ -30,6 +30,7 @@ h5,
 h6,
 p {
   font-family: var(--font-family-base);
+  color: var(--text-color);
 }
 
 body {
@@ -60,7 +61,6 @@ body {
 /* 導覽列 */
 .navbar {
   background-color: #fff;
-  padding: 0 2rem;
 }
 
 /* LOGO */
@@ -408,7 +408,25 @@ body {
   background-color: var(--secondary-color);
 }
 
-/* 響應式 */
+/* --------------------------------------------------
+   響應式調整：寬度 < 992px (平板與手機)
+-------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+    align-items: center;
+  }
+  .navbar-nav .nav-item {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+  .navbar-nav .nav-link {
+    justify-content: center;
+  }
+}
+/* --------------------------------------------------
+   響應式調整：寬度 < 768px (平板)
+-------------------------------------------------- */
 @media (max-width: 768px) {
   .navbar-collapse {
     padding: 0.5rem 1rem;
@@ -424,31 +442,9 @@ body {
     padding: 0.25rem 0.5rem;
   }
 }
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 991.98px) {
-  .navbar-nav {
-    text-align: center;
-    align-items: center;
-  }
-  .navbar-nav .nav-item {
-    width: 100%;
-    margin: 0.25rem 0;
-  }
-  .navbar-nav .nav-link {
-    justify-content: center;
-  }
-}
-/* 手機裝置時調整 Hero Title 字體大小 */
+/* --------------------------------------------------
+   響應式調整：寬度 < 576px (手機)
+-------------------------------------------------- */
 @media (max-width: 576px) {
   .navbar .dropdown-menu {
     left: auto !important;
@@ -456,10 +452,10 @@ body {
     transform: none !important;
   }
   .hero-title {
-    font-size: 1.8rem; /* 或根據需求調整大小 */
+    font-size: 1.8rem;
   }
   .typewriter-wrapper {
-    min-width: auto; /* 取消固定寬度，避免超出邊界 */
+    min-width: auto;
     display: inline-block;
   }
 }

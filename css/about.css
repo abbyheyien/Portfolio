@@ -60,7 +60,6 @@ body {
 /* 導覽列 */
 .navbar {
   background-color: #fff;
-  padding: 0 2rem;
 }
 
 /* LOGO */
@@ -424,5 +423,18 @@ body {
   }
   .photo {
     margin: 0 auto 1.5rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+    align-items: center;
+  }
+  .navbar-nav .nav-item {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+  .navbar-nav .nav-link {
+    justify-content: center;
   }
 }
