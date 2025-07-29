@@ -7,7 +7,6 @@
       name="description"
       content="嗨！我是 Abby，喜歡設計與前端開發的小網站創作者。"
     />
-
     <meta name="format-detection" content="telephone=no" />
     <link rel="icon" href="./img/favicon.png?v=2" type="image/png" />
     <!-- Bootstrap CSS（先放） -->
@@ -35,25 +34,30 @@
     />
 
     <!-- 自訂樣式 -->
-    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
     <title>Abby's Portfolio</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="./index.html">MyPortfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="切換導覽選單"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="page-container">
+        <!-- 第一列：品牌 + 漢堡 -->
+        <div class="d-flex w-100 justify-content-between align-items-center">
+          <a class="navbar-brand" href="./index.html">MyPortfolio</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="切換導覽選單"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <!-- 第二列：導覽選單 -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto align-items-lg-center" id="navLinks">
             <li class="nav-item">
@@ -85,14 +89,14 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <span class="nav-text"> <i class="bi bi-globe"></i> 語言 </span>
+                <span class="nav-text"><i class="bi bi-globe"></i> 語言</span>
               </a>
               <ul class="dropdown-menu" aria-labelledby="langDropdown">
                 <li>
-                  <a class="dropdown-item" href="./contact.html">繁體中文</a>
+                  <a class="dropdown-item" href="./index.html">繁體中文</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./contact-en.html">English</a>
+                  <a class="dropdown-item" href="./index-en.html">English</a>
                 </li>
               </ul>
             </li>
@@ -101,47 +105,12 @@
       </div>
     </nav>
 
-    <form class="contact-form" id="contactForm">
-      <h2>聯絡我</h2>
-      <label for="name">姓名</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="請輸入您的姓名"
-        required
-      />
-
-      <label for="email">電子郵件</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="請輸入您的電子郵件"
-        required
-      />
-
-      <label for="subject">主旨</label>
-      <input type="text" id="subject" name="subject" placeholder="請輸入主旨" />
-
-      <label for="message">留言</label>
-      <textarea
-        id="message"
-        name="message"
-        rows="5"
-        placeholder="請輸入留言內容"
-        required
-      ></textarea>
-
-      <button type="submit">送出訊息</button>
-    </form>
-
     <!-- footer -->
     <footer id="contact" class="footer py-4 text-center">
       <div class="footer-contact mb-3">
         <p>電話： +886 912 345 678</p>
         <p>地址：臺北市北投區</p>
-        <p>電子郵件： email@example.com</p>
+        <p>電子郵件： yienn0408@gmail.com</p>
       </div>
       <div class="footer-social mb-3">
         <a

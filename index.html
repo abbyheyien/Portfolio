@@ -40,19 +40,24 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="./index.html">MyPortfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="切換導覽選單"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="page-container">
+        <!-- 第一列：品牌 + 漢堡 -->
+        <div class="d-flex w-100 justify-content-between align-items-center">
+          <a class="navbar-brand" href="./index.html">MyPortfolio</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="切換導覽選單"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <!-- 第二列：導覽選單 -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto align-items-lg-center" id="navLinks">
             <li class="nav-item">
@@ -84,7 +89,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <span class="nav-text"> <i class="bi bi-globe"></i> 語言 </span>
+                <span class="nav-text"><i class="bi bi-globe"></i> 語言</span>
               </a>
               <ul class="dropdown-menu" aria-labelledby="langDropdown">
                 <li>
@@ -102,7 +107,7 @@
 
     <!-- hero -->
     <section id="hero" class="hero-section py-5">
-      <div class="custom-container">
+      <div class="page-container">
         <div
           class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 gap-md-5"
         >
@@ -118,7 +123,8 @@
             </h1>
 
             <p class="hero-subtext mb-4">
-              熱愛前端與創意設計，喜歡把想法變成作品。
+              學習前端開發中，對設計和互動很有興趣
+              <br />喜歡試著把腦中的想法做成實際的作品
             </p>
             <div class="d-flex gap-3 justify-content-center">
               <a href="./portfolio.html" class="btn">Projects</a>
@@ -131,8 +137,10 @@
 
     <!-- 關於我 -->
     <section class="intro-section">
-      <div class="custom-container">
-        <div class="d-flex flex-column flex-md-row align-items-center gap-5">
+      <div class="page-container">
+        <div
+          class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+        >
           <!-- 左側照片 -->
           <div class="intro-image">
             <img src="./img/profile.jpg" alt="個人照片" />
@@ -140,13 +148,15 @@
 
           <!-- 右側文字 -->
           <div class="intro-text">
-            <h1 class="intro-title">嗨，我是 Abby，一位前端開發者。</h1>
+            <h1 class="intro-title">大家好，我是 Abby！</h1>
             <p class="intro-description">
-              我專注於打造響應式網站，融合優雅的程式碼與細緻的設計。<br />
-              歡迎瀏覽我的作品，或進一步認識我。<br />
-              我的開發流程從設計思維出發，注重用戶體驗與細節。<br />
-              無論是靜態網頁、互動動畫還是前端框架應用，我都樂於嘗試與實踐。<br />
-              我相信技術與美感能共同創造有溫度的數位作品。
+              我立志成為一名前端開發者，喜歡動手做網頁，看到畫面一點一滴完成會有種成就感。我特別喜歡設計和前端結合的過程，像是調整排版、改動畫效果，讓整體更順、更漂亮，能帶給使用者好的體驗，就是我覺得很有意義的事。
+              <br /><br />
+              我重視介面的直覺性和操作的流暢度，會注意細節，不管是按鈕的反饋、排版的對齊，還是手機版的呈現方式，都希望讓整體看起來簡潔、清楚又好操作。
+              我也喜歡邊做邊學，看到新的效果或網頁設計就會想自己試試看，慢慢找到屬於自己的風格和節奏。
+              <br /><br />
+              目前還在持續練習和累積作品，希望能透過更多實作機會，讓自己成長，也讓做出來的東西越來越好。
+              歡迎你看看我的作品集，如果有任何想認識或交流的地方，也都很歡迎跟我聊聊！
             </p>
           </div>
         </div>
@@ -155,7 +165,7 @@
 
     <!-- projects -->
     <section id="projects" class="projects-section py-5">
-      <div class="custom-container">
+      <div class="page-container">
         <h2 class="section-title fw-bold mb-5">精選專案</h2>
         <div class="row g-4">
           <!-- Project Card 1 -->
@@ -197,7 +207,7 @@
                 alt="Project 1"
                 class="img-fluid project-image mb-3"
               />
-              <h5 class="project-title">candy shop</h5>
+              <h5 class="project-title">CANDY SHOP</h5>
               <p class="project-desc text-muted small">
                 CANDY SHOP
                 精選世界各地經典與創意糖果，搭配精美包裝，無論送禮或自用都讓人心動。

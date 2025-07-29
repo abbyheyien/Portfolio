@@ -34,25 +34,30 @@
     />
 
     <!-- 自訂樣式 -->
-    <link rel="stylesheet" href="./css/portfoilo.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
     <title>Abby's Portfolio</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="./index.html">MyPortfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="切換導覽選單"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="page-container">
+        <!-- 第一列：品牌 + 漢堡 -->
+        <div class="d-flex w-100 justify-content-between align-items-center">
+          <a class="navbar-brand" href="./index.html">MyPortfolio</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="切換導覽選單"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <!-- 第二列：導覽選單 -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto align-items-lg-center" id="navLinks">
             <li class="nav-item">
@@ -84,16 +89,14 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <span class="nav-text"> <i class="bi bi-globe"></i> 語言 </span>
+                <span class="nav-text"><i class="bi bi-globe"></i> 語言</span>
               </a>
               <ul class="dropdown-menu" aria-labelledby="langDropdown">
                 <li>
-                  <a class="dropdown-item" href="./portfolio.html">繁體中文</a>
+                  <a class="dropdown-item" href="./index.html">繁體中文</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./portfolio-en.html"
-                    >English</a
-                  >
+                  <a class="dropdown-item" href="./index-en.html">English</a>
                 </li>
               </ul>
             </li>
@@ -102,56 +105,265 @@
       </div>
     </nav>
 
-    <!-- projects -->
-    <section id="projects" class="projects-section py-5">
-      <div class="custom-container">
-        <h2 class="section-title fw-bold mb-5">精選專案</h2>
-        <div class="row g-4">
-          <!-- Project Card 1 -->
-          <div class="col-md-6 col-lg-4">
-            <a
-              href="https://abbyheyien.github.io/BIBOBIBO/"
-              class="project-card d-block text-decoration-none"
+    <section id="projects" class="py-5">
+      <div class="page-container">
+        <!-- 標題 -->
+        <div class="section-header d-flex align-items-center mb-5">
+          <h2 class="section-heading mb-0 me-3">作品展示</h2>
+          <div class="section-line flex-grow-1"></div>
+        </div>
+
+        <!-- Tabs 標籤 -->
+        <ul class="nav nav-tabs mb-4" id="projectTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="recent-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#recent"
+              type="button"
+              role="tab"
+              aria-controls="recent"
+              aria-selected="true"
             >
-              <img
-                src="./img/project1.png"
-                alt="Project 1"
-                class="img-fluid project-image mb-3"
-              />
-              <h5 class="project-title">BIBOBIBO遊戲網</h5>
-              <p class="project-desc text-muted small">
-                從益智解謎到動作冒險，BIBOBIBO遊戲網提供多樣化遊戲類型，讓玩家在趣味中挑戰自我、享受無限樂趣！
-              </p>
-            </a>
+              近期作品
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="featured-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#featured"
+              type="button"
+              role="tab"
+              aria-controls="featured"
+              aria-selected="false"
+            >
+              精選作品
+            </button>
+          </li>
+        </ul>
+
+        <!-- 搜尋欄 -->
+        <div class="mb-4">
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control"
+            placeholder="搜尋作品關鍵字（如 Vue、小遊戲...）"
+          />
+        </div>
+
+        <!-- Tab內容 -->
+        <div class="tab-content">
+          <!-- 近期作品 -->
+          <div
+            class="tab-pane fade show active"
+            id="recent"
+            role="tabpanel"
+            aria-labelledby="recent-tab"
+          >
+            <div class="row g-4">
+              <!-- 專案卡片 1 -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card p-3 h-100 border rounded-4 shadow-sm">
+                  <img
+                    src="img/project1.png"
+                    class="img-fluid rounded mb-3"
+                    alt="專案封面"
+                  />
+                  <h5 class="fw-semibold">BIBOBIBO 小遊戲平台</h5>
+                  <p class="text-muted small">
+                    結合 HTML/CSS/JS
+                    製作的小遊戲平台，提升孩子的運算思維與互動樂趣。
+                  </p>
+                  <div class="mb-2">
+                    <span class="badge bg-primary">HTML</span>
+                    <span class="badge bg-success">JavaScript</span>
+                    <span class="badge bg-secondary">Bootstrap</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    >查看作品</a
+                  >
+                </div>
+              </div>
+              <!-- 可再加其他卡片... -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card p-3 h-100 border rounded-4 shadow-sm">
+                  <img
+                    src="img/project1.png"
+                    class="img-fluid rounded mb-3"
+                    alt="專案封面"
+                  />
+                  <h5 class="fw-semibold">BIBOBIBO 小遊戲平台</h5>
+                  <p class="text-muted small">
+                    結合 HTML/CSS/JS
+                    製作的小遊戲平台，提升孩子的運算思維與互動樂趣。
+                  </p>
+                  <div class="mb-2">
+                    <span class="badge bg-primary">HTML</span>
+                    <span class="badge bg-success">JavaScript</span>
+                    <span class="badge bg-secondary">Bootstrap</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    >查看作品</a
+                  >
+                </div>
+              </div>
+              <!-- 可再加其他卡片... -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card p-3 h-100 border rounded-4 shadow-sm">
+                  <img
+                    src="img/project1.png"
+                    class="img-fluid rounded mb-3"
+                    alt="專案封面"
+                  />
+                  <h5 class="fw-semibold">BIBOBIBO 小遊戲平台</h5>
+                  <p class="text-muted small">
+                    結合 HTML/CSS/JS
+                    製作的小遊戲平台，提升孩子的運算思維與互動樂趣。
+                  </p>
+                  <div class="mb-2">
+                    <span class="badge bg-primary">HTML</span>
+                    <span class="badge bg-success">JavaScript</span>
+                    <span class="badge bg-secondary">Bootstrap</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    >查看作品</a
+                  >
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div
+                  class="project-card p-3 h-100 border rounded-4 shadow-sm text-center d-flex flex-column justify-content-center align-items-center"
+                  style="opacity: 0.6"
+                >
+                  <i
+                    class="bi bi-hourglass-split display-4 text-muted mb-3"
+                  ></i>
+                  <h5 class="fw-semibold text-muted">敬請期待</h5>
+                  <p class="text-muted small">更多精彩作品即將上線！</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div
+                  class="project-card p-3 h-100 border rounded-4 shadow-sm text-center d-flex flex-column justify-content-center align-items-center"
+                  style="opacity: 0.6"
+                >
+                  <i
+                    class="bi bi-hourglass-split display-4 text-muted mb-3"
+                  ></i>
+                  <h5 class="fw-semibold text-muted">敬請期待</h5>
+                  <p class="text-muted small">更多精彩作品即將上線！</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div
+                  class="project-card p-3 h-100 border rounded-4 shadow-sm text-center d-flex flex-column justify-content-center align-items-center"
+                  style="opacity: 0.6"
+                >
+                  <i
+                    class="bi bi-hourglass-split display-4 text-muted mb-3"
+                  ></i>
+                  <h5 class="fw-semibold text-muted">敬請期待</h5>
+                  <p class="text-muted small">更多精彩作品即將上線！</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- Project Card 2 -->
-          <div class="col-md-6 col-lg-4">
-            <a href="" class="project-card d-block text-decoration-none">
-              <img
-                src="./img/project2.png"
-                alt="Project 1"
-                class="img-fluid project-image mb-3"
-              />
-              <h5 class="project-title">DRINKDRINK</h5>
-              <p class="project-desc text-muted small">
-                嚴選天然食材，從手作糖漿到現泡茶葉，用心調出每一杯風味。來這裡，不只是解渴，更是一場關於味覺與笑容的日常體驗。
-              </p>
-            </a>
-          </div>
-          <!-- Project Card 3 -->
-          <div class="col-md-6 col-lg-4">
-            <a href="#" class="project-card d-block text-decoration-none">
-              <img
-                src="./img/project3.png"
-                alt="Project 1"
-                class="img-fluid project-image mb-3"
-              />
-              <h5 class="project-title">candy shop</h5>
-              <p class="project-desc text-muted small">
-                CANDY SHOP
-                精選世界各地經典與創意糖果，搭配精美包裝，無論送禮或自用都讓人心動。
-              </p>
-            </a>
+
+          <!-- 精選作品 -->
+          <div
+            class="tab-pane fade"
+            id="featured"
+            role="tabpanel"
+            aria-labelledby="featured-tab"
+          >
+            <div class="row g-4">
+              <!-- 專案卡片 2 -->
+              <!-- 可再加其他卡片... -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card p-3 h-100 border rounded-4 shadow-sm">
+                  <img
+                    src="img/project1.png"
+                    class="img-fluid rounded mb-3"
+                    alt="專案封面"
+                  />
+                  <h5 class="fw-semibold">BIBOBIBO 小遊戲平台</h5>
+                  <p class="text-muted small">
+                    結合 HTML/CSS/JS
+                    製作的小遊戲平台，提升孩子的運算思維與互動樂趣。
+                  </p>
+                  <div class="mb-2">
+                    <span class="badge bg-primary">HTML</span>
+                    <span class="badge bg-success">JavaScript</span>
+                    <span class="badge bg-secondary">Bootstrap</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    >查看作品</a
+                  >
+                </div>
+              </div>
+              <!-- 可再加其他卡片... -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card p-3 h-100 border rounded-4 shadow-sm">
+                  <img
+                    src="img/project1.png"
+                    class="img-fluid rounded mb-3"
+                    alt="專案封面"
+                  />
+                  <h5 class="fw-semibold">BIBOBIBO 小遊戲平台</h5>
+                  <p class="text-muted small">
+                    結合 HTML/CSS/JS
+                    製作的小遊戲平台，提升孩子的運算思維與互動樂趣。
+                  </p>
+                  <div class="mb-2">
+                    <span class="badge bg-primary">HTML</span>
+                    <span class="badge bg-success">JavaScript</span>
+                    <span class="badge bg-secondary">Bootstrap</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    >查看作品</a
+                  >
+                </div>
+              </div>
+              <!-- 可再加其他卡片... -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card p-3 h-100 border rounded-4 shadow-sm">
+                  <img
+                    src="img/project1.png"
+                    class="img-fluid rounded mb-3"
+                    alt="專案封面"
+                  />
+                  <h5 class="fw-semibold">BIBOBIBO 小遊戲平台</h5>
+                  <p class="text-muted small">
+                    結合 HTML/CSS/JS
+                    製作的小遊戲平台，提升孩子的運算思維與互動樂趣。
+                  </p>
+                  <div class="mb-2">
+                    <span class="badge bg-primary">HTML</span>
+                    <span class="badge bg-success">JavaScript</span>
+                    <span class="badge bg-secondary">Bootstrap</span>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    >查看作品</a
+                  >
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div
+                  class="project-card p-3 h-100 border rounded-4 shadow-sm text-center d-flex flex-column justify-content-center align-items-center"
+                  style="opacity: 0.6"
+                >
+                  <i
+                    class="bi bi-hourglass-split display-4 text-muted mb-3"
+                  ></i>
+                  <h5 class="fw-semibold text-muted">敬請期待</h5>
+                  <p class="text-muted small">更多精彩作品即將上線！</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -162,7 +374,7 @@
       <div class="footer-contact mb-3">
         <p>電話： +886 912 345 678</p>
         <p>地址：臺北市北投區</p>
-        <p>電子郵件： email@example.com</p>
+        <p>電子郵件： yienn0408@gmail.com</p>
       </div>
       <div class="footer-social mb-3">
         <a

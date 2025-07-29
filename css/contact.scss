@@ -9,7 +9,7 @@
   --primary-color: #003399;
   --secondary-color: #b0c4de;
   --secondary-color-dark: #7a96bc;
-  --font-family-base: "Libre Baskerville", serif;
+  --font-family-base: "Noto Sans TC";
   --background-color: #f9f9f9; /* 淺背景色 */
   --text-color: #333333;
 }
@@ -188,6 +188,32 @@ body {
 
 .nav-link:hover .nav-text::after {
   transform: scaleX(1);
+}
+
+#contact .form-control {
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+#contact .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 51, 153, 0.2);
+}
+
+#contact .btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.6rem 2rem;
+  border-radius: 30px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contact .btn:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.03);
 }
 
 /*表單*/

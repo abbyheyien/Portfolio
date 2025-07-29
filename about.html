@@ -39,20 +39,35 @@
     <title>Abby's Portfolio</title>
   </head>
   <body>
+    <!-- 側邊導覽 -->
+    <nav class="side-text-nav">
+      <ul>
+        <li><a href="#profile">個人資料</a></li>
+        <li><a href="#experience">學歷背景</a></li>
+        <li><a href="#certifications">專業證書</a></li>
+        <li><a href="#activities">活動參與</a></li>
+      </ul>
+    </nav>
+
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="./index.html">MyPortfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="切換導覽選單"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="page-container">
+        <!-- 品牌 + 漢堡選單 -->
+        <div class="d-flex w-100 justify-content-between align-items-center">
+          <a class="navbar-brand" href="./index.html">MyPortfolio</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="切換導覽選單"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <!-- 導覽選單 -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto align-items-lg-center" id="navLinks">
             <li class="nav-item">
@@ -84,7 +99,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <span class="nav-text"> <i class="bi bi-globe"></i> 語言 </span>
+                <span class="nav-text"><i class="bi bi-globe"></i> 語言</span>
               </a>
               <ul class="dropdown-menu" aria-labelledby="langDropdown">
                 <li>
@@ -100,83 +115,334 @@
       </div>
     </nav>
 
-    <div class="custom-wrapper">
-      <img class="photo" src="./img/pic2.jpg" alt="個人照片" />
-      <div class="text-content">
-        <h1>你好，我是Abby</h1>
-        <h2>前端開發者 & 網頁設計師</h2>
-        <p>
-          我熱愛將設計與程式結合，打造使用者體驗優異且美觀的網站，喜歡探索新技術與最佳化網站效能，熟悉
-          HTML、CSS、JavaScript。
-        </p>
-        <p>
-          閒暇時，我喜歡閱讀技術文章、嘗試設計新風格，並與社群分享心得。期待持續成長，創造更多有趣的專案！
-        </p>
-      </div>
-    </div>
+    <!-- 自我介紹 -->
+    <section id="profile" class="py-5 section-fullscreen">
+      <div class="page-container">
+        <div class="row g-5">
+          <!-- 左邊：個人資料 -->
+          <div class="col-md-8">
+            <div class="section-header d-flex align-items-center mb-4">
+              <h2 class="section-heading mb-0 me-3">自我介紹</h2>
+              <div class="section-line flex-grow-1"></div>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-nowrap">簡介</th>
+                    <td>
+                      我是 Abby，熱愛前端與設計，擅長
+                      <strong
+                        ><span class="highlight-tech">HTML、CSS</span></strong
+                      >，喜歡創作互動網頁，持續自學精進中，期待未來有更多實戰機會！
+                    </td>
+                  </tr>
 
-    <section id="skills" class="bg-light">
-      <div class="custom-container">
-        <div class="container">
-          <h2 class="fw-bold mb-5">技能概覽</h2>
-          <div
-            class="row row-cols-2 row-cols-sm-3 row-cols-md-6 gx-4 gy-4 justify-content-center"
-          >
-            <div class="col">
-              <div
-                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
+                  <tr>
+                    <th scope="row" class="text-nowrap">學歷</th>
+                    <td>淡江大學資訊與圖書館學系</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap">經歷</th>
+                    <td>
+                      <ol class="mb-0 ps-3">
+                        <li>橘子蘋果程式學苑－學習教練</li>
+                        <li>碩睿資訊有限公司－賽事專員</li>
+                        <li>竹圍高中圖書館－實習館員</li>
+                      </ol>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap">語言</th>
+                    <td>
+                      中文：
+                      <div
+                        class="star-rating"
+                        data-lang="ch"
+                        data-score="4"
+                      ></div>
+                      <br />
+                      英文：
+                      <div
+                        class="star-rating"
+                        data-lang="en"
+                        data-score="4"
+                      ></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap">專長</th>
+                    <td>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                        alt="HTML"
+                        style="height: 40px"
+                      />
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                        alt="CSS"
+                        style="height: 40px"
+                      />
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JS"
+                        style="height: 40px"
+                      />
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                        alt="React"
+                        style="height: 40px"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-nowrap">開發經驗</th>
+                    <td>自學網頁設計，熟悉 HTML、CSS 基礎開發</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 右邊：大頭照 -->
+          <div class="col-md-2 text-center">
+            <img
+              src="./img/nn.png"
+              alt="大頭照"
+              class="img-fluid rounded-circle shadow"
+              style="max-width: 280px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 學歷背景 -->
+    <section id="experience" class="py-5 section-fullscreen">
+      <div class="page-container">
+        <div class="section-header d-flex align-items-center mb-4">
+          <h2 class="section-heading mb-0 me-3">學歷背景</h2>
+          <div class="section-line flex-grow-1"></div>
+        </div>
+
+        <div class="accordion" id="experienceAccordion">
+          <!-- 經歷 1 -->
+          <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="exp1-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#exp1"
+                aria-expanded="false"
+                aria-controls="exp1"
               >
-                <i class="fab fa-html5 fa-3x mb-3" style="color: #e34f26"></i>
-                <p class="fw-semibold mb-0">HTML5</p>
+                2022 - 現在｜學習教練｜橘子蘋果程式學苑
+              </button>
+            </h2>
+            <div
+              id="exp1"
+              class="accordion-collapse collapse"
+              aria-labelledby="exp1-header"
+              data-bs-parent="#experienceAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  我在橘子蘋果程式學苑擔任學習教練，使用學苑自編教材，依據不同年齡設計課程，教授積木編程與基礎語法，培養學生邏輯思維與問題解決能力。透過專題實作與引導式教學，幫助孩子建立對程式的興趣與自信。
+                </p>
+
+                <!-- 三張照片 -->
+                <div class="row text-center">
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work_pic1.jpg"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照1"
+                    />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work_pic2.jpg"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照2"
+                    />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work_pic3.jpg"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照3"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col">
-              <div
-                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
+          </div>
+
+          <!-- 經歷 2 -->
+          <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="exp2-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#exp2"
+                aria-expanded="false"
+                aria-controls="exp2"
               >
-                <i
-                  class="fab fa-css3-alt fa-3x mb-3"
-                  style="color: #1572b6"
-                ></i>
-                <p class="fw-semibold mb-0">CSS</p>
+                2023 - 2024｜賽事專員｜碩陽數位科技
+              </button>
+            </h2>
+            <div
+              id="exp2"
+              class="accordion-collapse collapse"
+              aria-labelledby="exp2-header"
+              data-bs-parent="#experienceAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  我負責策劃 VEX
+                  機器人相關賽事，包含競賽流程規劃、賽務執行與場地安排，並擔任裁判長協助教育訓練，設計裁判培訓教材與流程，提升整體比賽公正與效率。在與團隊協作中，我培養出活動統籌與溝通協調能力，確保每場比賽順利進行，讓選手能在公平有趣的環境中展現實力。
+                </p>
+
+                <!-- 三張工作照片 -->
+                <div class="row text-center">
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work2_pic1.jpg"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照1"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work2_pic2.jpg"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照2"
+                      loading="fast"
+                    />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work2_pic3.jpg"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照3"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col">
-              <div
-                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
+          </div>
+
+          <!-- 經歷 3 -->
+          <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="exp3-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#exp3"
+                aria-expanded="false"
+                aria-controls="exp3"
               >
-                <i
-                  class="fab fa-js-square fa-3x mb-3"
-                  style="color: #f0db4f"
-                ></i>
-                <p class="fw-semibold mb-0">JavaScript</p>
+                2021 - 2023｜實習生｜碩睿資訊有限公司
+              </button>
+            </h2>
+            <div
+              id="exp3"
+              class="accordion-collapse collapse"
+              aria-labelledby="exp3-header"
+              data-bs-parent="#experienceAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  圖書館系統 Koha
+                  的管理，包含帳號權限設定、館藏資料維護與系統備份， 同時負責
+                  Koha
+                  中文翻譯與語意審核，確保系統介面清晰易用，提升使用者操作體驗。
+                </p>
+
+                <!-- 三張工作照片：要放在 .accordion-body 裡面 -->
+                <div class="row text-center">
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work3_pic1.jpg"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照1"
+                    />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work3_pic2.png"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照2"
+                    />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work3_pic3.png"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照3"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col">
-              <div
-                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
+          </div>
+
+          <!-- 經歷 4 -->
+          <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="exp4-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#exp4"
+                aria-expanded="false"
+                aria-controls="exp4"
               >
-                <i class="fab fa-python fa-3x mb-3" style="color: #3776ab"></i>
-                <p class="fw-semibold mb-0">Python</p>
-              </div>
-            </div>
-            <div class="col">
-              <div
-                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
-              >
-                <i
-                  class="fab fa-bootstrap fa-3x mb-3"
-                  style="color: #7952b3"
-                ></i>
-                <p class="fw-semibold mb-0">Bootstrap</p>
-              </div>
-            </div>
-            <div class="col">
-              <div
-                class="skill-card text-center h-100 p-3 bg-white rounded shadow-sm"
-              >
-                <i class="fab fa-php fa-3x mb-3" style="color: #777bb3"></i>
-                <p class="fw-semibold mb-0">PHP</p>
+                2019 - 2023｜淡江大學｜資訊與圖書館學系
+              </button>
+            </h2>
+            <div
+              id="exp4"
+              class="accordion-collapse collapse"
+              aria-labelledby="exp4-header"
+              data-bs-parent="#experienceAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  就讀淡江大學資訊與圖書館學系，主修資訊科技與圖書資訊管理。課程結合程式設計、資料庫、數位內容設計與使用者體驗，培養資訊系統應用與資料組織能力。我也參與多項圖資實作課程，熟悉圖書館自動化系統與資訊檢索技術，奠定良好基礎。
+                </p>
+                <!-- 三張工作照片 -->
+                <div class="row text-center">
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work4_pic1.jpg"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照1"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work4_pic2.jpg"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照2"
+                      loading="fast"
+                    />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <img
+                      src="./img/work4_pic3.jpg"
+                      class="img-fluid work-photo zoomable"
+                      alt="工作照3"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -184,65 +450,129 @@
       </div>
     </section>
 
-    <section id="experience" class="py-5">
-      <div class="custom-container">
-        <div class="container">
-          <h2 class="fw-bold mb-5">工作經歷</h2>
-          <div class="timeline">
-            <!--經歷1 -->
-            <div class="timeline-item d-flex mb-5">
-              <div class="timeline-dot mt-1 me-3"></div>
-              <div>
-                <p class="mb-1 text-muted fw-bold">2022 - 現在</p>
-                <h5 class="fw-semibold mb-1">
-                  學習教練｜<span class="fw-bold">橘子蘋果程式學苑</span>
-                </h5>
-                <p class="text-muted small mb-0">
-                  依年齡因材施教，培養學童邏輯思考、問題解決的能力。
+    <div
+      id="imageOverlay"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      "
+    >
+      <img id="overlayImage" src="" style="max-width: 90%; max-height: 90%" />
+    </div>
+
+    <section id="certifications" class="py-5">
+      <div class="page-container">
+        <div class="section-header d-flex align-items-center mb-4">
+          <h2 class="section-heading mb-0 me-3">專業證書</h2>
+          <div class="section-line flex-grow-1"></div>
+        </div>
+
+        <div class="row">
+          <!-- 證書 1 -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="./img/certifications/excel.png"
+                class="card-img-top"
+                alt="證書1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">MOS Excel 專業級</h5>
+                <p class="card-text">
+                  熟悉進階試算表操作與資料分析，提升工作效率。
                 </p>
               </div>
             </div>
-            <!--經歷2 -->
-            <div class="timeline-item d-flex mb-5">
-              <div class="timeline-dot mt-1 me-3"></div>
-              <div>
-                <p class="mb-1 text-muted fw-bold">2023-2024</p>
-                <h5 class="fw-semibold mb-1">
-                  賽事專員｜<span class="fw-bold">碩陽數位科技</span>
-                </h5>
-                <p class="text-muted small mb-0">
-                  策劃VEX機器人賽事，負責比賽裁判教育訓練。
-                </p>
+          </div>
+
+          <!-- 證書 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="./img/certifications/excel.png"
+                class="card-img-top"
+                alt="證書2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">圖書資訊管理認證</h5>
+                <p class="card-text">具備圖資系統管理與資料庫維護實務經驗。</p>
               </div>
             </div>
-            <!--經歷3 -->
-            <div class="timeline-item d-flex mb-5">
-              <div class="timeline-dot mt-1 me-3"></div>
-              <div>
-                <p class="mb-1 text-muted fw-bold">2021 - 2023</p>
-                <h5 class="fw-semibold mb-1">
-                  實習生｜<span class="fw-bold">碩睿資訊有限公司</span>
-                </h5>
-                <p class="text-muted small mb-0">
-                  圖書館系統koha的管理、負責koha翻譯與審核。
-                </p>
-              </div>
-            </div>
-            <!--經歷4 -->
-            <div class="timeline-item d-flex mb-5">
-              <div class="timeline-dot mt-1 me-3"></div>
-              <div>
-                <p class="mb-1 text-muted fw-bold">2019 – 2023</p>
-                <h5 class="fw-semibold mb-1">
-                  淡江大學｜<span class="fw-bold">資訊與圖書館學系</span>
-                </h5>
-                <p class="text-muted small mb-0">
-                  主修資訊科技與圖書資訊管理，結合設計與使用者體驗。
+          </div>
+
+          <!-- 證書 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="./img/certifications/excel.png"
+                class="card-img-top"
+                alt="證書3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Python 入門認證</h5>
+                <p class="card-text">
+                  理解基本語法與資料處理，具備程式設計基礎能力。
                 </p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="activities" class="py-5">
+      <div class="page-container">
+        <div class="section-header d-flex align-items-center mb-5">
+          <h2 class="section-heading mb-0 me-3">活動參與</h2>
+          <div class="section-line flex-grow-1"></div>
+        </div>
+
+        <ul class="activity-list list-unstyled">
+          <li
+            class="activity-item d-flex align-items-start"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="協助現場場佈與流程引導，負責隊伍報到與秩序維護。"
+          >
+            <i class="bi bi-award-fill activity-icon me-3"></i>
+            <span>2024｜VEX Taiwan Open 賽事志工</span>
+          </li>
+          <li
+            class="activity-item d-flex align-items-start"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="完成作品展示網頁，使用 RWD 技術與動畫互動，挑戰三週開發。"
+          >
+            <i class="bi bi-code-slash activity-icon me-3"></i>
+            <span>2023｜F2E 前端挑戰賽參賽</span>
+          </li>
+          <li
+            class="activity-item d-flex align-items-start"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="參與開發者社群活動，聆聽前端與產品相關分享。"
+          >
+            <i class="bi bi-people-fill activity-icon me-3"></i>
+            <span>2022｜GDG 高雄活動參與</span>
+          </li>
+          <li
+            class="activity-item d-flex align-items-start"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="校內設計與介面實作課程成果展覽與互評。"
+          >
+            <i class="bi bi-easel-fill activity-icon me-3"></i>
+            <span>2021｜UI/UX 校內工作坊</span>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -251,7 +581,7 @@
       <div class="footer-contact mb-3">
         <p>電話： +886 912 345 678</p>
         <p>地址：臺北市北投區</p>
-        <p>電子郵件： email@example.com</p>
+        <p>電子郵件： yienn0408@gmail.com</p>
       </div>
       <div class="footer-social mb-3">
         <a
@@ -291,6 +621,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/about.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
