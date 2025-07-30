@@ -17,7 +17,11 @@
 
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
 
@@ -34,7 +38,7 @@
     />
 
     <!-- 自訂樣式 -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main.css" />
 
     <title>Abby's Portfolio</title>
   </head>
@@ -143,7 +147,7 @@
         >
           <!-- 左側照片 -->
           <div class="intro-image">
-            <img src="./img/profile.jpg" alt="個人照片" />
+            <img src="" alt="個人照片" />
           </div>
 
           <!-- 右側文字 -->
@@ -152,9 +156,6 @@
             <p class="intro-description">
               我立志成為一名前端開發者，喜歡動手做網頁，看到畫面一點一滴完成會有種成就感。我特別喜歡設計和前端結合的過程，像是調整排版、改動畫效果，讓整體更順、更漂亮，能帶給使用者好的體驗，就是我覺得很有意義的事。
               <br /><br />
-              我重視介面的直覺性和操作的流暢度，會注意細節，不管是按鈕的反饋、排版的對齊，還是手機版的呈現方式，都希望讓整體看起來簡潔、清楚又好操作。
-              我也喜歡邊做邊學，看到新的效果或網頁設計就會想自己試試看，慢慢找到屬於自己的風格和節奏。
-              <br /><br />
               目前還在持續練習和累積作品，希望能透過更多實作機會，讓自己成長，也讓做出來的東西越來越好。
               歡迎你看看我的作品集，如果有任何想認識或交流的地方，也都很歡迎跟我聊聊！
             </p>
@@ -162,100 +163,38 @@
         </div>
       </div>
     </section>
+<!-- footer -->
+<footer class="footer py-4 text-center">
+  <div class="footer-social mb-3">
+    <a
+      href="https://www.linkedin.com/in/yien-he-b10528376/"
+      target="_blank"
+      aria-label="LinkedIn"
+      class="mx-2"
+    >
+      <i class="bi bi-linkedin"></i>
+    </a>
+    <a
+      href="https://github.com/abbyheyien"
+      target="_blank"
+      aria-label="GitHub"
+      class="mx-2"
+    >
+      <i class="bi bi-github"></i>
+    </a>
+    <a
+      href="./contact.html"
+      aria-label="Contact"
+      class="mx-2"
+    >
+      <i class="bi bi-envelope-fill"></i>
+    </a>
+  </div>
+  <div class="footer-copy">
+    <p>© 2025 Abby's Portfolio. All rights reserved.</p>
+  </div>
+</footer>
 
-    <!-- projects -->
-    <section id="projects" class="projects-section py-5">
-      <div class="page-container">
-        <h2 class="section-title fw-bold mb-5">精選專案</h2>
-        <div class="row g-4">
-          <!-- Project Card 1 -->
-          <div class="col-md-6 col-lg-4">
-            <a
-              href="https://abbyheyien.github.io/BIBOBIBO/"
-              class="project-card d-block text-decoration-none"
-            >
-              <img
-                src="./img/project1.png"
-                alt="Project 1"
-                class="img-fluid project-image mb-3"
-              />
-              <h5 class="project-title">BIBOBIBO遊戲網</h5>
-              <p class="project-desc text-muted small">
-                從益智解謎到動作冒險，BIBOBIBO遊戲網提供多樣化遊戲類型，讓玩家在趣味中挑戰自我、享受無限樂趣！
-              </p>
-            </a>
-          </div>
-          <!-- Project Card 2 -->
-          <div class="col-md-6 col-lg-4">
-            <a href="#" class="project-card d-block text-decoration-none">
-              <img
-                src="./img/project2.png"
-                alt="Project 1"
-                class="img-fluid project-image mb-3"
-              />
-              <h5 class="project-title">DRINKDRINK</h5>
-              <p class="project-desc text-muted small">
-                嚴選天然食材，從手作糖漿到現泡茶葉，用心調出每一杯風味。來這裡，不只是解渴，更是一場關於味覺與笑容的日常體驗。
-              </p>
-            </a>
-          </div>
-          <!-- Project Card 3 -->
-          <div class="col-md-6 col-lg-4">
-            <a href="#" class="project-card d-block text-decoration-none">
-              <img
-                src="./img/project3.png"
-                alt="Project 1"
-                class="img-fluid project-image mb-3"
-              />
-              <h5 class="project-title">CANDY SHOP</h5>
-              <p class="project-desc text-muted small">
-                CANDY SHOP
-                精選世界各地經典與創意糖果，搭配精美包裝，無論送禮或自用都讓人心動。
-              </p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- footer -->
-    <footer id="contact" class="footer py-4 text-center">
-      <div class="footer-contact mb-3">
-        <p>電話： +886 912 345 678</p>
-        <p>地址：臺北市北投區</p>
-        <p>電子郵件： yienn0408@gmail.com</p>
-      </div>
-      <div class="footer-social mb-3">
-        <a
-          href="https://www.linkedin.com/in/yien-he-b10528376/"
-          target="_blank"
-          aria-label="LinkedIn"
-          class="mx-2"
-        >
-          <i class="bi bi-linkedin"></i>
-        </a>
-        <a
-          href="https://github.com/abbyheyien"
-          target="_blank"
-          aria-label="GitHub"
-          class="mx-2"
-        >
-          <i class="bi bi-github"></i>
-        </a>
-        <a
-          href="https://mail.google.com/mail/?view=cm&to=yienn0408@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Email"
-          class="mx-2"
-        >
-          <i class="bi bi-envelope-fill"></i>
-        </a>
-      </div>
-      <div class="footer-copy">
-        <p>© 2025 Abby's Portfolio. All rights reserved.</p>
-      </div>
-    </footer>
 
     <button id="backToTop" aria-label="Back to top">
       <i class="fas fa-arrow-up"></i>
